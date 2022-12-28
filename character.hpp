@@ -1,4 +1,7 @@
-#pragma once
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
+#ifndef CHARACTER_HPP
+#define CHARACTER_HPP
 #include "element.hpp"
 #include "weapon.hpp"
 
@@ -23,3 +26,5 @@ public:
     int virtualAttack();
     int EditWeapon(char *);
 };
+
+#endif // CHARACTER_HPP

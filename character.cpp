@@ -1,6 +1,8 @@
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
 #include <iostream>
 #include <cstring>
-#include "Character.hpp"
+#include "character.hpp"
 using namespace std;
 
 

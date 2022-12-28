@@ -1,16 +1,33 @@
-#pragma once
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
+#ifndef EPICCHARACTER_HPP
+#define EPICCHARACTER_HPP
 #include "character.hpp"
 
 class EpicCharacter : protected Character
 {
 private:
 public:
-    /*Constructor*/
-    EpicCharacter(char *Name, char *Location,
-                       Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
-                       : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars) {};
-    /*Destructor*/
-    ~EpicCharacter();
-    /*Methods*/
+    /* Constructors */
+    EpicCharacter(char *Name,
+                  char *Location,
+                  Element Type,
+                  Weapon WeaponType,
+                  char *EquippedWeapon,
+                  int Stars)
+        : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
+    /* Getters */
+
+    /* Setters */
+
+    /* Operators */
+
+    /* Methods */
     int Attack();
+
+    /* Destructor */
+    ~EpicCharacter();
 };
+/* Stream operators */
+
+#endif // EPICCHARACTER_HPP

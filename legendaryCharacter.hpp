@@ -1,4 +1,5 @@
-#pragma once
+#ifndef LEGENDARYCHARACTER_HPP
+#define LEGENDARYCHARACTER_HPP
 #include "character.hpp"
 
 class LegendaryCharacter : protected Character
@@ -17,3 +18,6 @@ public:
     /*Methods*/
     int Attack();
 };
+
+
+#endif // LEGENDARYCHARACTER_HPP

@@ -1,0 +1,11 @@
+# Alon A. Rabinowitz 208142323
+# Yasmin Adler 208462184
+CC = g++
+FLAGS = -pedantic 
+
+.DELETE_ON_ERROR:
+all: 
+	$(CC) $(FLAGS) -o *.cpp
+
+clean:
+	del *.o *.exe

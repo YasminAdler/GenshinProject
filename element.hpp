@@ -1,4 +1,7 @@
-#pragma once
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
+#ifndef ELEMENT_HPP
+#define ELEMENT_HPP
 
 enum Element
 {
@@ -10,3 +13,14 @@ enum Element
     Geo,
     Dendro
 };
+
+const char *ElementName[]{
+    {"Anemo (Wind)"},
+    {"Pyro (Fire)"},
+    {"Cyro (Frost)"},
+    {"Hydro (Water)"},
+    {"Electro (l mean-... common)"},
+    {"Geo (Earth)"},
+    {"Dendro (Nature)"}};
+    
+#endif // ELEMENT_HPP

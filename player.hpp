@@ -1,4 +1,7 @@
-#pragma once
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
+#ifndef PLAYER_HPP
+#define PLAYER_HPP
 #include <iostream>
 #include "character.hpp"
 
@@ -10,8 +13,13 @@ private:
     Character *dataCharacters;
 
 public:
-    /*Constructors*/
+    /* Constructors */
     Player();
-    /*Destructor*/
+
+    /* Destructor */
     ~Player();
 };
+
+/* Stream operators */
+
+#endif // PLAYER_HPP
