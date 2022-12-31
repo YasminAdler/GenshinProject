@@ -16,6 +16,9 @@ public:
     /* Constructors */
     Player();
 
+    /* Setters */
+    void setName(string);
+
     /* Destructor */
     ~Player();
 };

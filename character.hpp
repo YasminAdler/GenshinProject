@@ -20,8 +20,12 @@ public:
     Character();
     Character(char *Name, char *Location,
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
-        /*Destructors*/
-        ~Character();
+    /*Destructors*/
+    ~Character();
+
+    /* Setters */
+    void setName(string name);
+
     /*Methods*/
     int virtualAttack();
     int EditWeapon(char *);
