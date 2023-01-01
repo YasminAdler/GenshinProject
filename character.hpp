@@ -32,7 +32,7 @@ public:
     void setName(char* Name) {name = strdup(Name);};
 
     /*Methods*/
-    virtual int Attack();
+    // virtual int Attack();
     virtual int EditWeapon(char* charName);
     virtual int Attack(){};
     int EditWeapon(char* charName);
