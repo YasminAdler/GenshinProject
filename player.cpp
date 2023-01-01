@@ -8,7 +8,14 @@ using namespace std;
 /*Constructors*/
 Player::Player()
 {
+numberOfCharacters = 0;
+}
 
+/*Setters*/
+int Player::setNumberOfCharacters()
+{
+    numberOfCharacters = numberOfCharacters + 1;
+    return numberOfCharacters;
 }
 /*Destructor*/
 Player::~Player()

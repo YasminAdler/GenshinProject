@@ -8,16 +8,19 @@
 class Player
 {
 private:
-    char *userNamer;
+    char *userName;
     Character *activeCharacters[4];
     Character *dataCharacters;
+    int numberOfCharacters;
 
 public:
     /* Constructors */
     Player();
 
+
     /* Setters */
     void setName(string);
+    int setNumberOfCharacters();
 
     /* Destructor */
     ~Player();

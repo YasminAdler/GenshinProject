@@ -12,7 +12,7 @@ enum Weapon
     Bow
 };
 
-const char *WeaponName[]{
+ char *WeaponName[]{
     {"Sword"},
     {"Polearm"},
     {"Catalyst"},

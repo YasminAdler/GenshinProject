@@ -23,14 +23,16 @@ public:
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
 
     /* Getters */
-    Weapon getWeapon(){return weaponType;};
+    char* getWeapon();
+    Weapon getIntWeapon();
     char* getName(){return name;};
+    char* getEquippedWeapon();
 
     /* Setters */
     void setName(char* Name) {name = strdup(Name);};
 
     /*Methods*/
-    virtual int virtualAttack();
+    virtual int virtualAttack(){};
     int EditWeapon(char* charName);
     void printName();
 

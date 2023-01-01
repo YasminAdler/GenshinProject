@@ -18,8 +18,10 @@ public:
         : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
 
     /* Getters */
-    Weapon getLegendaryWeapon();
+    char* getLegendaryWeapon();
+    Weapon getIntLegendaryWeapon();
     char *getLegendaryName(); 
+    char* legendaryGetEquipped();
 
 
     /* Setters */

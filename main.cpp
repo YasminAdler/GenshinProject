@@ -24,6 +24,7 @@ bool addNewCharacterToData(Player &player)
           cout << "invald key" << endl;
           break;
      }
+     player.setNumberOfCharacters();
 }
 
 bool editWeaponToCharacter(Player &player)

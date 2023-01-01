@@ -17,6 +17,10 @@ public:
                   int Stars)
         : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
     /* Getters */
+    char *getEpicWeapon();
+    Weapon getIntEpicWeapon();
+    char *getEpicName();
+    char *getEquippedWeapon();
 
     /* Setters */
 
@@ -24,7 +28,8 @@ public:
 
     /* Methods */
     int Attack();
-    int EditEpicWeapon(char* charName);
+    int EditEpicWeapon(char *charName);
+    void printEpicName();
 
     /* Destructor */
     ~EpicCharacter();
