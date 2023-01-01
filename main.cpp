@@ -7,24 +7,36 @@
 
 using namespace std;
 
+void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter* character){
+
+}
+
 bool addNewCharacterToData(Player &player)
 {
-     string name;
-     Character character{};
+     char name[CHAR_MAX];
+     Character *character = new Character{};
      char input = '0';
      cout << "Character name:\t";
      cin >> name;
-     cout << "Character type(E-Epic, L-legend, r-regular):" << endl;
-     switch (input)
+     character->setName(name);
+     cout << "Character type(E-Epic, L-legend):" << endl;
+     do
      {
-     case 'E':
-     case 'L':
-     case 'r':
-     default:
-          cout << "invald key" << endl;
-          break;
-     }
-     player.setNumberOfCharacters();
+          cin >> input;
+          switch (input)
+          {
+          case 'E':
+               // ** May not work needs to be checked
+               EpicCharacter *character = dynamic_cast<EpicCharacter *>(character);
+          case 'L':
+               LegendaryCharacter *character = dynamic_cast<LegendaryCharacter *>(character);
+               addLegendaryWeaponToLegendaryCharacter(character);
+          default:
+               cout << "invald key" << endl;
+               break;
+          }
+     } while (input != 'E' || input != 'L');
+     player.addCharacter(character);
 }
 
 bool editWeaponToCharacter(Player &player)
@@ -33,10 +45,15 @@ bool editWeaponToCharacter(Player &player)
 
 bool editActiveTeam(Player &player)
 {
-     cout << "a. Character1\n"
-          << "b. Character2\n"
-          << "c. Character3\n"
-          << "d. Character4" << endl;
+     char input = '0';
+     cout << "Which character?\n"
+          << "a. " << player.getCharacter(0) << "\n"
+          << "b. " << player.getCharacter(1) << "\n"
+          << "c. " << player.getCharacter(2) << "\n"
+          << "d. " << player.getCharacter(3) << endl;
+     cin >> input;
+     cin.clear();
+     cout << "swa??"
 }
 
 bool evaluateTeam(Player &player)
