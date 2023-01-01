@@ -16,7 +16,9 @@ private:
 public:
     /* Constructors */
     Player();
-
+    
+    /*Getters*/
+    int getNumberOfCharacters(); // not needed
 
     /* Setters */
     void setName(string);

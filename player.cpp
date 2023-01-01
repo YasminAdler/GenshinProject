@@ -11,6 +11,11 @@ Player::Player()
 numberOfCharacters = 0;
 }
 
+/*Getters*/
+int Player::getNumberOfCharacters()
+{
+    return numberOfCharacters;
+}
 /*Setters*/
 int Player::setNumberOfCharacters()
 {

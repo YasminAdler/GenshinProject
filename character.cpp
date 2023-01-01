@@ -3,6 +3,7 @@
 #include <iostream>
 #include <cstring>
 #include "character.hpp"
+
 using namespace std;
 
 Character::Character()
@@ -49,9 +50,11 @@ char *Character::getEquippedWeapon()
 
 int Character::EditWeapon(char *charName)
 {
-    // if(int i = 0; i< )
-    // weaponType =;
-    // return weaponType;
+     cout << "1.  \n"
+          << "2 Edit Weapon to character (by name)\n"
+          << "3 Edit active team (you choose who you want to swap - can be empty)\n"
+          << "4 Evaluate Team\n"
+          << "0 Exit" << endl;
 }
 
 void Character::printName()
