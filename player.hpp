@@ -21,7 +21,11 @@ public:
     /* Setters */
     void setName(string);
     int setNumberOfCharacters();
+    void addCharacter(Character *);
 
+    /* Getters */
+    Character *getCharacter(int characterNumber);
+    
     /* Destructor */
     ~Player();
 };

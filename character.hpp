@@ -32,8 +32,8 @@ public:
     void setName(char* Name) {name = strdup(Name);};
 
     /*Methods*/
-    virtual int virtualAttack(){};
-    int EditWeapon(char* charName);
+    virtual int Attack();
+    virtual int EditWeapon(char* charName);
     void printName();
 
     /*Destructors*/
