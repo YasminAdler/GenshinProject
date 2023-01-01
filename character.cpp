@@ -5,15 +5,12 @@
 #include "character.hpp"
 using namespace std;
 
-
 Character::Character()
 {
-    
 }
 Character::Character(char *Name, char *Location,
                      Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
 {
-    
 }
 
 Weapon Character::getWeapon()
@@ -21,15 +18,16 @@ Weapon Character::getWeapon()
     return weaponType;
 }
 
-int Character::EditWeapon(Weapon weaponNum)
+int Character::EditWeapon(char *charName)
 {
-    weaponType = weaponNum;
-    return weaponType;
+    // if(int i = 0; i< )
+    // weaponType =;
+    // return weaponType;
 }
 
 void Character::printName()
 {
-    for(int i = 0; i < strlen(name); i++)
+    for (int i = 0; i < strlen(name); i++)
     {
         cout << name[i];
     }
@@ -37,5 +35,4 @@ void Character::printName()
 
 Character::~Character()
 {
-    
 }

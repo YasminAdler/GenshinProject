@@ -4,7 +4,7 @@
 #define EPICCHARACTER_HPP
 #include "character.hpp"
 
-class EpicCharacter : protected Character
+class EpicCharacter : public Character
 {
 private:
 public:
@@ -24,7 +24,7 @@ public:
 
     /* Methods */
     int Attack();
-    int EditEpicWeapon(Weapon weaponNum);
+    int EditEpicWeapon(char* charName);
 
     /* Destructor */
     ~EpicCharacter();

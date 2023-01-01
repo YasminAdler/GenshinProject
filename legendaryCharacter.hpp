@@ -2,7 +2,7 @@
 #define LEGENDARYCHARACTER_HPP
 #include "character.hpp"
 
-class LegendaryCharacter : protected Character
+class LegendaryCharacter : public Character
 {
 private:
     char *signitureWeapon;
@@ -33,7 +33,7 @@ public:
 
     /*Methods*/
     int Attack();
-    int EditLegendaryWeapon(Weapon weaponNum);
+    int EditLegendaryWeapon(char* charName);
     void printLegendaryName();
 };
 
