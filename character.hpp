@@ -30,7 +30,7 @@ public:
     void setName(char* Name) {name = strdup(Name);};
 
     /*Methods*/
-    virtual int virtualAttack() = 0;
+    virtual int virtualAttack();
     int EditWeapon(char *);
     void printName();
 
