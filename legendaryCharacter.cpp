@@ -64,6 +64,11 @@ int LegendaryCharacter::Attack()
     return 0;
 }
 
+int LegendaryCharacter::EditLegendaryWeapon(Weapon weaponNum)
+{
+    return EditWeapon(weaponNum);
+}
+
 /*Destructor*/
 LegendaryCharacter::~LegendaryCharacter()
 {

@@ -12,6 +12,13 @@ EpicCharacter::EpicCharacter(char *Name, char *Location, Element Type, Weapon We
     
 }
 
+
+/*Methods*/
+int EpicCharacter::EditEpicWeapon(Weapon weaponNum)
+{
+    return EditWeapon(weaponNum);
+}
+
 /*Destructor*/
 EpicCharacter::~EpicCharacter()
 {

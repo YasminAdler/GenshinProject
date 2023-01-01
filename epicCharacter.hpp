@@ -24,6 +24,7 @@ public:
 
     /* Methods */
     int Attack();
+    int EditEpicWeapon(Weapon weaponNum);
 
     /* Destructor */
     ~EpicCharacter();

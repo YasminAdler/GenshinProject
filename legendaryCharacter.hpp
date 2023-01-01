@@ -33,6 +33,7 @@ public:
 
     /*Methods*/
     int Attack();
+    int EditLegendaryWeapon(Weapon weaponNum);
     void printLegendaryName();
 };
 

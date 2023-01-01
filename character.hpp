@@ -31,7 +31,7 @@ public:
 
     /*Methods*/
     virtual int virtualAttack();
-    int EditWeapon(char *);
+    int EditWeapon(Weapon weaponNum);
     void printName();
 
     /*Destructors*/

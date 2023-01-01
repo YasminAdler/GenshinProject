@@ -21,6 +21,12 @@ Weapon Character::getWeapon()
     return weaponType;
 }
 
+int Character::EditWeapon(Weapon weaponNum)
+{
+    weaponType = weaponNum;
+    return weaponType;
+}
+
 void Character::printName()
 {
     for(int i = 0; i < strlen(name); i++)
