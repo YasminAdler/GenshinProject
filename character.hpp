@@ -4,6 +4,7 @@
 #define CHARACTER_HPP
 #include "element.hpp"
 #include "weapon.hpp"
+#include <string.h>
 
 class Character
 {
@@ -20,15 +21,21 @@ public:
     Character();
     Character(char *Name, char *Location,
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
-    /*Destructors*/
-    ~Character();
+
+    /* Getters */
+    Weapon getWeapon(){return weaponType;};
+    char* getName(){return name;};
 
     /* Setters */
-    void setName(string name);
+    void setName(char* Name) {name = strdup(Name);};
 
     /*Methods*/
-    int virtualAttack();
+    virtual int virtualAttack() = 0;
     int EditWeapon(char *);
+    void printName();
+
+    /*Destructors*/
+    ~Character();
 };
 
 #endif // CHARACTER_HPP

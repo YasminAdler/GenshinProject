@@ -9,6 +9,7 @@ using namespace std;
 
 EpicCharacter::EpicCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
 {
+    
 }
 
 /*Destructor*/

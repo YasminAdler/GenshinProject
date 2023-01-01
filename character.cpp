@@ -15,3 +15,21 @@ Character::Character(char *Name, char *Location,
 {
     
 }
+
+Weapon Character::getWeapon()
+{
+    return weaponType;
+}
+
+void Character::printName()
+{
+    for(int i = 0; i < strlen(name); i++)
+    {
+        cout << name[i];
+    }
+}
+
+Character::~Character()
+{
+    
+}
