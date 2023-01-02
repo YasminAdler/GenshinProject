@@ -50,11 +50,24 @@ char *Character::getEquippedWeapon()
 
 int Character::EditWeapon(char *charName)
 {
-     cout << "1.  \n"
-          << "2 Edit Weapon to character (by name)\n"
-          << "3 Edit active team (you choose who you want to swap - can be empty)\n"
-          << "4 Evaluate Team\n"
-          << "0 Exit" << endl;
+    if (strcmp(name, charName) == 0)
+    {
+        int newWeapon = -1;
+        while (newWeapon < 0 || newWeapon > 4)
+        {
+            cout << "Choose your new weapon:\n";
+
+            printWeaponName();
+
+            cin >> newWeapon;
+            if (newWeapon < 0 || newWeapon > 4)
+            {
+                cout << "Invalid number\n";
+            }
+        }
+        weaponType = (Weapon)newWeapon;
+    }
+    return 0;
 }
 
 void Character::printName()
