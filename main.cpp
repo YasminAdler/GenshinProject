@@ -9,8 +9,6 @@ using namespace std;
 
 void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
 {
-void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
-{
 }
 
 bool addNewCharacterToData(Player &player)
@@ -45,6 +43,25 @@ bool addNewCharacterToData(Player &player)
 
 void editWeaponToCharacter(Player &player)
 {
+     Character *character;
+     char *name;
+     char input;
+     cout << "Which character?\n"
+          << "a. " << player.getActiveCharacter(0) << "\n"
+          << "b. " << player.getActiveCharacter(1) << "\n"
+          << "c. " << player.getActiveCharacter(2) << "\n"
+          << "d. " << player.getActiveCharacter(3) << endl;
+     do
+     {
+          cin >> input;
+          cin.clear();
+          if (input < 'a' || input > 'd')
+               cout << "Invalid input";
+     } while (input < 'a' || input > 'd');
+     character = player.getDataCharacter(input - 'a');
+     cout << "Input new weapon: ";
+     cin >> name;
+     character->EditWeapon(name);
 }
 
 bool editActiveTeam(Player &player)
@@ -72,7 +89,7 @@ bool editActiveTeam(Player &player)
 
 bool evaluateTeam(Player &player)
 {
-
+     
 }
 
 int main()
