@@ -87,11 +87,6 @@ bool editActiveTeam(Player &player)
      player.setActiveCharacter(input[0] - 'a', player.getDataCharacter(characterNumber));
 }
 
-bool evaluateTeam(Player &player)
-{
-     
-}
-
 int main()
 {
      Player player{};
