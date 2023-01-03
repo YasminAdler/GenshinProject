@@ -9,6 +9,8 @@ using namespace std;
 
 void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
 {
+void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
+{
 }
 
 bool addNewCharacterToData(Player &player)
@@ -28,9 +30,11 @@ bool addNewCharacterToData(Player &player)
           case 'E':
                // ** May not work needs to be checked
                EpicCharacter *character = dynamic_cast<EpicCharacter *>(character);
+               break;
           case 'L':
                LegendaryCharacter *character = dynamic_cast<LegendaryCharacter *>(character);
                addLegendaryWeaponToLegendaryCharacter(character);
+               break;
           default:
                cout << "invald key" << endl;
                break;
@@ -41,28 +45,34 @@ bool addNewCharacterToData(Player &player)
 
 void editWeaponToCharacter(Player &player)
 {
-     char input = '0';
-     cout << "To which character would you like to change weapon?\n"
-          << "a. " << player.getCharacter(0) << "\n"
-          << "b. " << player.getCharacter(1) << "\n"
-          << "c. " << player.getCharacter(2) << "\n"
-          << "d. " << player.getCharacter(3) << endl;
-     cin >> input;
-     cin.clear();
-     player.getCharacter(input)->EditWeapon(player.getCharacter(input)->getName());  
 }
 
 bool editActiveTeam(Player &player)
 {
-     char input = '0';
-     cout << "Which character?\n"
-          << "a. " << player.getCharacter(0) << "\n"
-          << "b. " << player.getCharacter(1) << "\n"
-          << "c. " << player.getCharacter(2) << "\n"
-          << "d. " << player.getCharacter(3) << endl;
+     char *input;
+     int characterNumber;
+     unsigned numOfCharachters = player.getNumberOfCharacters();
+     cout << "Which character to add to the active team?";
+     for (unsigned i = 0; i < numOfCharachters; i++)
+     {
+          cout << i + 1 << " " << player.getActiveCharacter(i) << endl;
+     }
      cin >> input;
      cin.clear();
-     cout << "swa??";
+     characterNumber = stoi(input);
+     cout << "Which character?\n"
+          << "a. " << player.getActiveCharacter(0) << "\n"
+          << "b. " << player.getActiveCharacter(1) << "\n"
+          << "c. " << player.getActiveCharacter(2) << "\n"
+          << "d. " << player.getActiveCharacter(3) << endl;
+     cin >> input;
+     cin.clear();
+     player.setActiveCharacter(input[0] - 'a', player.getDataCharacter(characterNumber));
+}
+
+bool evaluateTeam(Player &player)
+{
+
 }
 
 int main()

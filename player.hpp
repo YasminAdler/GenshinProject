@@ -18,15 +18,17 @@ public:
     Player();
     
     /*Getters*/
-    int getNumberOfCharacters(); // not needed
+    int getNumberOfCharacters(); 
 
     /* Setters */
     void setName(string);
     int setNumberOfCharacters();
     void addCharacter(Character *);
+    void setActiveCharacter(int, Character *);
 
     /* Getters */
-    Character *getCharacter(int characterNumber);
+    Character *getDataCharacter(int characterNumber);
+    Character *getActiveCharacter(int characterNumber);
     Character *getCharacters();
 
     /*Mathods*/
