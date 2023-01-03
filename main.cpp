@@ -39,7 +39,7 @@ bool addNewCharacterToData(Player &player)
      player.addCharacter(character);
 }
 
-bool editWeaponToCharacter(Player &player)
+void editWeaponToCharacter(Player &player)
 {
      char input = '0';
      cout << "To which character would you like to change weapon?\n"
@@ -49,8 +49,7 @@ bool editWeaponToCharacter(Player &player)
           << "d. " << player.getCharacter(3) << endl;
      cin >> input;
      cin.clear();
-     player.getCharacter(input)->EditWeapon(player.getCharacter(input)->getName());
-     
+     player.getCharacter(input)->EditWeapon(player.getCharacter(input)->getName());  
 }
 
 bool editActiveTeam(Player &player)
