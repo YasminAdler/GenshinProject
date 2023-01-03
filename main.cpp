@@ -58,6 +58,7 @@ bool editActiveTeam(Player &player)
 
 bool evaluateTeam(Player &player)
 {
+     
 }
 
 int main()

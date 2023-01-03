@@ -48,7 +48,17 @@ char *Character::getEquippedWeapon()
     return equippedWeapon;
 }
 
-int Character::EditWeapon(char *charName)
+char *Character::getLocation()
+{
+    return location;
+}
+
+Element Character::getElement()
+{
+    return type;
+}
+
+int Character::EditWeapon(char *charName) // got to check this, might cause problems
 {
     if (strcmp(name, charName) == 0)
     {

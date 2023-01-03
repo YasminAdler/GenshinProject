@@ -27,6 +27,8 @@ public:
     Weapon getIntWeapon();
     char* getName(){return name;};
     char* getEquippedWeapon();
+    char* getLocation();
+    Element getElement();
 
     /* Setters */
     void setName(char* Name) {name = strdup(Name);};

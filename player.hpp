@@ -27,6 +27,9 @@ public:
 
     /* Getters */
     Character *getCharacter(int characterNumber);
+    Character *getCharacters();
+    void evaluateTeam();
+
     
     /* Destructor */
     ~Player();

@@ -27,3 +27,31 @@ Player::~Player()
 {
 
 }
+
+Character *Player::getCharacters()
+{
+    return dataCharacters;
+}
+
+void Player::evaluateTeam()
+{
+    for(int i = 0; i< 4; i++)
+    {
+        if(activeCharacters[i]->getElement() == (Element)0)
+        {
+            for(int j = 0; j<4; j++)
+            {
+                if(i == j)
+                {
+                    continue;
+                }
+                if(activeCharacters[j]->getElement() == (Element))
+                
+            }
+
+        }
+
+
+
+    }
+}
