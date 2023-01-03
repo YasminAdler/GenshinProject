@@ -28,7 +28,11 @@ public:
     /* Getters */
     Character *getCharacter(int characterNumber);
     Character *getCharacters();
+
+    /*Mathods*/
     void evaluateTeam();
+    void editWeaponToCharacter();
+
 
     
     /* Destructor */

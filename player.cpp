@@ -17,6 +17,11 @@ int Player::getNumberOfCharacters()
     return numberOfCharacters;
 }
 
+Character *Player::getCharacter(int characterNumber)
+{
+    return activeCharacters[characterNumber];
+}
+
 Character *Player::getCharacters()
 {
     return dataCharacters;
@@ -202,6 +207,10 @@ void Player::evaluateTeam()
              << "Adding " << flagElement << "0%"
              << " coordination\n";
     }
+}
+
+void Player::editWeaponToCharacter()
+{
 }
 
 /*Destructor*/

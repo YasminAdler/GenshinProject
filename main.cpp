@@ -7,8 +7,8 @@
 
 using namespace std;
 
-void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter* character){
-
+void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
+{
 }
 
 bool addNewCharacterToData(Player &player)
@@ -41,6 +41,16 @@ bool addNewCharacterToData(Player &player)
 
 bool editWeaponToCharacter(Player &player)
 {
+     char input = '0';
+     cout << "To which character would you like to change weapon?\n"
+          << "a. " << player.getCharacter(0) << "\n"
+          << "b. " << player.getCharacter(1) << "\n"
+          << "c. " << player.getCharacter(2) << "\n"
+          << "d. " << player.getCharacter(3) << endl;
+     cin >> input;
+     cin.clear();
+     player.getCharacter(input)->EditWeapon(player.getCharacter(input)->getName());
+     
 }
 
 bool editActiveTeam(Player &player)
@@ -54,11 +64,6 @@ bool editActiveTeam(Player &player)
      cin >> input;
      cin.clear();
      cout << "swa??";
-}
-
-bool evaluateTeam(Player &player)
-{
-
 }
 
 int main()
