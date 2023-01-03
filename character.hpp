@@ -5,6 +5,7 @@
 #include "element.hpp"
 #include "weapon.hpp"
 #include <string.h>
+#include <iostream>
 
 class Character
 {
@@ -23,7 +24,7 @@ public:
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
 
     /* Getters */
-    char* getWeapon();
+    char *getWeapon();
     Weapon getIntWeapon();
     char* getName(){return name;};
     char* getEquippedWeapon();
@@ -31,17 +32,19 @@ public:
     Element getElement();
 
     /* Setters */
-    void setName(char* Name) {name = strdup(Name);};
+    void setName(char *Name) { name = strdup(Name); };
 
     /*Methods*/
-    virtual int EditWeapon(char* charName);
-    virtual int Attack(){};
-    int EditWeapon(char* charName);
+    virtual void EditWeapon(char* charName);
+    virtual void Attack(){};
+    // int EditWeapon(char *charName);
     void printName();
     
 
     /*Destructors*/
     ~Character();
 };
+/* Stream operators */
+std::ostream &operator<<(std::ostream &os, Character &character);
 
 #endif // CHARACTER_HPP
