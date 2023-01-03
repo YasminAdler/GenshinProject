@@ -53,12 +53,12 @@ bool editActiveTeam(Player &player)
           << "d. " << player.getCharacter(3) << endl;
      cin >> input;
      cin.clear();
-     cout << "swa??"
+     cout << "swa??";
 }
 
 bool evaluateTeam(Player &player)
 {
-     
+
 }
 
 int main()
@@ -94,7 +94,7 @@ int main()
                editActiveTeam(player);
                break;
           case '4':
-               evaluateTeam(player);
+               player.evaluateTeam();
                break;
           default:
                cout << "invalid key" << endl;

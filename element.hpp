@@ -7,7 +7,7 @@ enum Element
 {
     Anemo,
     Pyro,
-    Cyro,
+    Cryo,
     Hydro,
     Electro,
     Geo,
@@ -17,7 +17,7 @@ enum Element
 const char *ElementName[]{
     {"Anemo (Wind)"},
     {"Pyro (Fire)"},
-    {"Cyro (Frost)"},
+    {"Cryo (Frost)"},
     {"Hydro (Water)"},
     {"Electro (l mean-... common)"},
     {"Geo (Earth)"},
