@@ -27,8 +27,8 @@ public:
     /* Operators */
 
     /* Methods */
-    int Attack();
-    int EditEpicWeapon(char *charName);
+    void Attack();
+    void EditEpicWeapon(char *charName);
     void printEpicName();
 
     /* Destructor */

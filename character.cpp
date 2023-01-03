@@ -58,7 +58,7 @@ Element Character::getElement()
     return type;
 }
 
-int Character::EditWeapon(char *charName) // got to check this, might cause problems
+ void Character::EditWeapon(char *charName) // got to check this, might cause problems
 {
     if (strcmp(name, charName) == 0)
     {
@@ -77,7 +77,6 @@ int Character::EditWeapon(char *charName) // got to check this, might cause prob
         }
         weaponType = (Weapon)newWeapon;
     }
-    return 0;
 }
 
 void Character::printName()

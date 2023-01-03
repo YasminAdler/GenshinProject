@@ -40,7 +40,7 @@ void LegendaryCharacter::printLegendaryName()
 
 /* Methods */
 
-int LegendaryCharacter::Attack()
+void LegendaryCharacter::Attack()
 {
 
     switch (getIntLegendaryWeapon())
@@ -70,15 +70,14 @@ int LegendaryCharacter::Attack()
     default:
         break;
     }
-    if (strcpy(signitureWeapon, legendaryGetEquipped()) == 0) 
+    if (strcpy(signitureWeapon, legendaryGetEquipped()) == 0)
     {
         printLegendaryName();
         cout << " has a signiture weapon equipped! double demage!\n";
     }
-    return 0;
 }
 
-int LegendaryCharacter::EditLegendaryWeapon(char *charName)
+void LegendaryCharacter::EditLegendaryWeapon(char *charName)
 {
     return EditWeapon(charName);
 }

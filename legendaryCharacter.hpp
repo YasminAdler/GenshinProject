@@ -34,8 +34,8 @@ public:
 
 
     /*Methods*/
-    int Attack();
-    int EditLegendaryWeapon(char* charName);
+    void Attack();
+    void EditLegendaryWeapon(char* charName);
     void printLegendaryName();
 };
 

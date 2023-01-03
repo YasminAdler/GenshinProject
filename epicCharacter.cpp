@@ -33,7 +33,7 @@ char *EpicCharacter::getEpicName()
 }
 
 /*Methods*/
-int EpicCharacter::EditEpicWeapon(char *charName)
+void EpicCharacter::EditEpicWeapon(char *charName)
 {
     return EditWeapon(charName);
 }
@@ -43,7 +43,7 @@ void EpicCharacter::printEpicName()
     printName();
 }
 
-int EpicCharacter::Attack()
+void EpicCharacter::Attack()
 {
     switch (getIntEpicWeapon())
     {
@@ -72,7 +72,6 @@ int EpicCharacter::Attack()
     default:
         break;
     }
-    return 0;
 }
 /*Destructor*/
 EpicCharacter::~EpicCharacter()

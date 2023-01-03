@@ -17,7 +17,7 @@ int Player::getNumberOfCharacters()
     return numberOfCharacters;
 }
 
-Character *Player::getCharacter(int characterNumber)
+Character *Player::getActiveCharacter(int characterNumber)
 {
     return activeCharacters[characterNumber];
 }
