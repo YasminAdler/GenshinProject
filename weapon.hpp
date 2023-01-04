@@ -14,11 +14,11 @@ enum Weapon
 };
 
 char *WeaponName[]{
-    {"Sword"},
-    {"Polearm"},
-    {"Catalyst"},
-    {"Claymore"},
-    {"Bow"}};
+    {(char*)"Sword"},
+    {(char*)"Polearm"},
+    {(char*)"Catalyst"},
+    {(char*)"Claymore"},
+    {(char*)"Bow"}};
     
 void printWeaponName()
 {
