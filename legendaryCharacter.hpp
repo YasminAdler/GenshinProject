@@ -9,30 +9,24 @@ private:
 
 public:
     /*Constructor*/
+    LegendaryCharacter();
     LegendaryCharacter(char *Name, char *Location,
-                       Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *signitureWeapon)
-        : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
+                       Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *signitureWeapon);
 
     /* Getters */
-    char* getLegendaryWeapon();
+    char *getLegendaryWeapon();
     Weapon getIntLegendaryWeapon();
-    char *getLegendaryName(); 
-    char* legendaryGetEquipped();
-
-
-    /* Setters */
-    void setName(char *Name);
-
-    /* Setters */
-
-    /*Destructor*/
-    ~LegendaryCharacter();
-
+    char *getLegendaryName();
+    char *legendaryGetEquipped();
 
     /*Methods*/
     void Attack();
-    void EditLegendaryWeapon(char* charName);
+    void EditLegendaryWeapon(char *charName);
     void printLegendaryName();
+    
+    /*Destructor*/
+    ~LegendaryCharacter();
+
 };
 
 #endif // LEGENDARYCHARACTER_HPP
