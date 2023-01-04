@@ -2,6 +2,7 @@
 // Yasmin Adler 208462184
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
+#include <iostream>
 
 enum Weapon
 {
