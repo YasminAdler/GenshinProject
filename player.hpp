@@ -10,7 +10,7 @@ class Player
 private:
     char *userName;
     Character *activeCharacters[4];
-    Character *dataCharacters;
+    Character **dataCharacters;
     int numberOfCharacters;
 
 public:
@@ -21,7 +21,7 @@ public:
     int getNumberOfCharacters(); 
 
     /* Setters */
-    void setName(char *Name);
+    void setPlayerName(char *Name);
     int setNumberOfCharacters();
     void addCharacterToData(Character *);
     void setActiveCharacter(int, Character *);

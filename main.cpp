@@ -27,7 +27,7 @@ bool addNewCharacterToPlayer(Player &player)
           switch (input)
           {
           case 'E':
-               // ** May not work needs to be checked
+               // *** May not work needs to be checked
                EpicCharacter *character = dynamic_cast<EpicCharacter *>(character);
                break;
           case 'L':
@@ -89,11 +89,11 @@ bool editActiveTeam(Player &player)
 int main()
 {
      Player player{};
-     string name;
+     char name[CHAR_MAX];
      char input = '0';
      cout << "Player name:\t";
      cin >> name;
-     player.setName(name);
+     player.setPlayerName(name);
      // cin.clear();
      cout << "1 Add New Character to data \n"
           << "2 Edit Weapon to character (by name)\n"
@@ -103,7 +103,7 @@ int main()
      do
      {
           cin >> input;
-          // cin.clear(); need to check **
+          // cin.clear(); need to check ***
           switch (input)
           {
           case '0':
