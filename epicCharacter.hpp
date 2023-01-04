@@ -9,18 +9,18 @@ class EpicCharacter : public Character
 private:
 public:
     /* Constructors */
+    EpicCharacter() : Character(){};
     EpicCharacter(char *Name,
                   char *Location,
                   Element Type,
                   Weapon WeaponType,
                   char *EquippedWeapon,
-                  int Stars)
-        : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
+                  int Stars);
+
     /* Getters */
     char *getEpicWeapon();
     Weapon getIntEpicWeapon();
     char *getEpicName();
-    char *getEquippedWeapon();
 
     /* Setters */
 

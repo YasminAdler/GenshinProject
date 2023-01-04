@@ -6,18 +6,21 @@
 using namespace std;
 
 /*Constructor*/
+EpicCharacter::EpicCharacter(char *Name,
+                             char *Location,
+                             Element Type,
+                             Weapon WeaponType,
+                             char *EquippedWeapon,
+                             int Stars)
+    : Character(Name,
+                Location,
+                Type,
+                WeaponType,
+                EquippedWeapon,
+                Stars) {}
 
-EpicCharacter::EpicCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
-{
-}
-
-
-/*Getters*/
-char *EpicCharacter::getEquippedWeapon()
-{
-    return getEquippedWeapon();
-}
-char* EpicCharacter::getEpicWeapon()
+/* Getters */
+char *EpicCharacter::getEpicWeapon()
 {
     return getWeapon();
 }
@@ -32,7 +35,7 @@ char *EpicCharacter::getEpicName()
     return getName();
 }
 
-/*Methods*/
+/* Methods */
 void EpicCharacter::EditEpicWeapon(char *charName)
 {
     return EditWeapon(charName);
@@ -73,7 +76,5 @@ void EpicCharacter::Attack()
         break;
     }
 }
-/*Destructor*/
-EpicCharacter::~EpicCharacter()
-{
-}
+/* Destructor */
+EpicCharacter::~EpicCharacter() {}

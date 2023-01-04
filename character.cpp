@@ -6,14 +6,30 @@
 
 using namespace std;
 
+/* Constructors */
 Character::Character()
-{
-}
-Character::Character(char *Name, char *Location,
-                     Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
-{
-}
+    : name(nullptr),
+      location(nullptr),
+      type(nullElement),
+      weaponType(nullWeapon),
+      equippedWeapon(nullptr),
+      stars(0) {}
+Character::Character(char *Name,
+                     char *Location,
+                     Element Type,
+                     Weapon WeaponType,
+                     char *EquippedWeapon,
+                     int Stars)
+    : name(strdup(Name)),
+      location(strdup(Location)),
+      type(Type),
+      weaponType(WeaponType),
+      equippedWeapon(EquippedWeapon),
+      stars(Stars) {}
 
+/* Getters */
+// What does this do? ***
+// or supposed to do.
 char *Character::getWeapon()
 {
     switch (weaponType)
@@ -48,12 +64,6 @@ char *Character::getEquippedWeapon()
     return equippedWeapon;
 }
 
-void Character::SetEquippedWeapon(char * newWeapon)
-{
-    delete equippedWeapon;
-    equippedWeapon = strdup(newWeapon);
-}
-
 char *Character::getLocation()
 {
     return location;
@@ -64,35 +74,51 @@ Element Character::getElement()
     return type;
 }
 
- void Character::EditWeapon(char *charName) // got to check this, might cause problems
+/* Setters */
+void Character::SetEquippedWeapon(char *newWeapon)
 {
-    if (strcmp(name, charName) == 0)
+    delete equippedWeapon;
+    equippedWeapon = strdup(newWeapon);
+}
+
+/* Methods */
+void Character::EditWeapon(char *charName) // got to check this, might cause problems
+{
+    char input = '0';
+    Weapon newWeapon = nullWeapon;
+    if (strcmp(name, charName) != 0)
+        return;
+
+    while (newWeapon <= nullWeapon || newWeapon >= lastWeapon)
     {
-        int newWeapon = -1;
-        while (newWeapon < 0 || newWeapon > 4)
+        cout << "Choose your new weapon:\n";
+        printWeaponName();
+        cin >> input;
+        cin.clear();
+        newWeapon = (Weapon)(input - '0');
+        if (newWeapon <= nullWeapon || newWeapon >= lastWeapon)
         {
-            cout << "Choose your new weapon:\n";
-
-            printWeaponName();
-
-            cin >> newWeapon;
-            if (newWeapon < 0 || newWeapon > 4)
-            {
-                cout << "Invalid number\n";
-            }
+            cout << "Invalid number\n";
         }
-        weaponType = (Weapon)newWeapon;
     }
+    weaponType = newWeapon;
 }
 
 void Character::printName()
 {
-    for (int i = 0; i < strlen(name); i++)
+    for (size_t i = 0; i < strlen(name); i++)
     {
         cout << name[i];
     }
 }
 
+/* Destructor */
 Character::~Character()
 {
+    if (name != nullptr)
+        delete[] name;
+    if (location != nullptr)
+        delete[] location;
+    if (equippedWeapon != nullptr)
+        delete[] equippedWeapon;
 }

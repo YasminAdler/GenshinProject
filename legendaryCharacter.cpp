@@ -6,14 +6,16 @@
 
 using namespace std;
 
-/*Constructor*/
+/* Constructor */
+LegendaryCharacter::LegendaryCharacter()
+    : Character(),
+      signitureWeapon(nullptr) {}
+
 LegendaryCharacter::LegendaryCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *SignitureWeapon)
-{
-    signitureWeapon = strdup(SignitureWeapon);
-}
+    : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars),
+      signitureWeapon(strdup(SignitureWeapon)) {}
 
 /* Getters */
-
 char *LegendaryCharacter::getLegendaryWeapon()
 {
     return getWeapon();
@@ -48,7 +50,6 @@ void LegendaryCharacter::Attack()
         break;
     case Polearm:
         printLegendaryName();
-
         cout << " agile with polearm\n";
         break;
     case Catalyst:
@@ -92,11 +93,11 @@ void LegendaryCharacter::EditLegendaryWeapon(char *charName)
         }
         this->SetEquippedWeapon(WeaponName[newWeapon]);
     }
-    
-
 }
 
-/*Destructor*/
+/* Destructor */
 LegendaryCharacter::~LegendaryCharacter()
 {
+    if (signitureWeapon != nullptr)
+        delete[] signitureWeapon;
 }

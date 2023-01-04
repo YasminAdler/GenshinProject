@@ -3,34 +3,37 @@
 #ifndef WEAPON_HPP
 #define WEAPON_HPP
 #include <iostream>
+#include <cstring>
 
 
 enum Weapon
 {
+    nullWeapon = -1,
     Sword,
     Polearm,
     Catalyst,
     Claymore,
-    Bow
+    Bow,
+    lastWeapon
 };
 
 char *WeaponName[]{
-    {(char*)"Sword"},
-    {(char*)"Polearm"},
-    {(char*)"Catalyst"},
-    {(char*)"Claymore"},
-    {(char*)"Bow"}};
-    
+    {(char *)"Sword"},
+    {(char *)"Polearm"},
+    {(char *)"Catalyst"},
+    {(char *)"Claymore"},
+    {(char *)"Bow"}};
+
 void printWeaponName()
 {
-    for(int i = 0; i<5; i++)
+    for (size_t i = 0; i < 5; i++)
     {
-        std::cout << i+1 << "."; 
-        for(int j = 0; j<strlen(WeaponName[i]); j++)
+        std::cout << i + 1 << ".";
+        for (size_t j = 0; j < strlen(WeaponName[i]); j++)
         {
             std::cout << WeaponName[i][j];
         }
-        std::cout <<"\n";
+        std::cout << "\n";
     }
 }
 

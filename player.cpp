@@ -5,35 +5,36 @@
 #include "player.hpp"
 using namespace std;
 
-/*Constructors*/
-Player::Player()
-{
-    numberOfCharacters = 0;
-}
+/* Constructors */
+Player::Player() : numberOfCharacters(0) {}
 
-/*Getters*/
-int Player::getNumberOfCharacters()
+/* Getters */
+unsigned Player::getNumberOfCharacters()
 {
     return numberOfCharacters;
 }
 
-Character *Player::getActiveCharacter(int characterNumber)
+Character *Player::getActiveCharacter(unsigned characterNumber)
 {
     return activeCharacters[characterNumber];
 }
 
+void Player::setPlayerName(char *Name)
+{
+    userName = strdup(Name);
+}
 
-/*Setters*/
-int Player::setNumberOfCharacters()
+/* Setters */
+unsigned Player::setNumberOfCharacters()
 {
     numberOfCharacters = numberOfCharacters + 1;
     return numberOfCharacters;
 }
-static ostream osOut;
-static istream osIn;
+// static ostream osOut;
+// static istream osIn;
 
-/*Mathods*/
-void Player::evaluateTeam()
+/* Methods */
+void Player::evaluateTeam(ostream &osOut)
 {
     osOut << "Passable Elements Reactions:\n";
 
@@ -45,7 +46,7 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)2)
                 {
-                    osOut << "Blizzard\n", "Swirl\n";
+                    osOut << "Blizzard & Swirl\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)5)
@@ -184,8 +185,8 @@ void Player::evaluateTeam()
             }
         }
         osOut << flagLocation << " Characters are from the same location:\n"
-             << "Adding " << flagLocation << "0%"
-             << " coordination\n";
+              << "Adding " << flagLocation << "0%"
+              << " coordination\n";
     }
 
     // same Element characters:
@@ -202,8 +203,8 @@ void Player::evaluateTeam()
             }
         }
         osOut << flagElement << " Characters have the same Element:\n"
-             << "Adding " << flagElement << "0%"
-             << " coordination\n";
+              << "Adding " << flagElement << "0%"
+              << " coordination\n";
     }
 }
 

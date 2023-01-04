@@ -4,7 +4,6 @@
 #define CHARACTER_HPP
 #include "element.hpp"
 #include "weapon.hpp"
-#include <string.h>
 #include <iostream>
 
 class Character
@@ -18,7 +17,7 @@ private:
     int stars;
 
 public:
-    /*Constructors*/
+    /* Constructors */
     Character();
     Character(char *Name, char *Location,
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
@@ -26,23 +25,22 @@ public:
     /* Getters */
     char *getWeapon();
     Weapon getIntWeapon();
-    char* getName(){return name;};
-    char* getEquippedWeapon();
-    void SetEquippedWeapon(char*);
-    char* getLocation();
+    char *getName() { return name; };
+    char *getEquippedWeapon();
+    void SetEquippedWeapon(char *);
+    char *getLocation();
     Element getElement();
 
     /* Setters */
     void setName(char *Name) { name = strdup(Name); };
 
-    /*Methods*/
-    virtual void EditWeapon(char* charName);
+    /* Methods */
+    virtual void EditWeapon(char *charName);
     virtual void Attack(){};
     // int EditWeapon(char *charName);
     void printName();
-    
 
-    /*Destructors*/
+    /* Destructor */
     ~Character();
 };
 /* Stream operators */
