@@ -27,12 +27,12 @@ public:
     void setActiveCharacter(int, Character *);
 
     /* Getters */
-    Character *getDataCharacter(int characterNumber);
-    Character *getActiveCharacter(int characterNumber);
+    Character *getDataCharacter(int characterNumber); // use this to get the data characters array
+    Character *getActiveCharacter(int characterNumber); // use this to get the active characters array
     Character *getCharacters();
 
     /*Mathods*/
-    void evaluateTeam();
+    void evaluateTeam(); // use this in option 4 in main
     void editWeaponToCharacter();
 
 

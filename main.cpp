@@ -1,9 +1,9 @@
 // Alon A. Rabinowitz 208142323
 // Yasmin Adler 208462184
 #include <iostream>
-#include <player.hpp>
-#include <epicCharacter.hpp>
-#include <legendaryCharacter.hpp>
+#include "player.hpp"
+#include "epicCharacter.hpp"
+#include "legendaryCharacter.hpp"
 
 using namespace std;
 
@@ -59,9 +59,7 @@ void editWeaponToCharacter(Player &player)
                cout << "Invalid input";
      } while (input < 'a' || input > 'd');
      character = player.getDataCharacter(input - 'a');
-     cout << "Input new weapon: ";
-     cin >> name;
-     character->EditWeapon(name);
+     character->EditWeapon(character->getName());
 }
 
 bool editActiveTeam(Player &player)
