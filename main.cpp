@@ -27,7 +27,6 @@ bool addNewCharacterToPlayer(Player &player)
           {
           case 'E':
           {
-               // *** May not work needs to be checked
                EpicCharacter *character = new EpicCharacter();
                character->setName(name);
                player.addCharacterToData(character);
@@ -35,7 +34,7 @@ bool addNewCharacterToPlayer(Player &player)
           }
           case 'L':
           {
-               LegendaryCharacter *character = new LegendaryCharacter(); // *** why is the character still epic and not legendary
+               LegendaryCharacter *character = new LegendaryCharacter(); 
                // EditLegendaryWeaponToLegendaryCharacter(character);
                character->setName(name);
                player.addCharacterToData(character);
@@ -46,12 +45,12 @@ bool addNewCharacterToPlayer(Player &player)
                break;
           }
      } while (input != 'E' || input != 'L');
+     return true;
 }
 
 void editWeaponToCharacter(Player &player)
 {
      Character *character;
-     char *name;
      char input;
      cout << "Which character?\n"
           << "a. " << player.getActiveCharacter(0) << "\n"
@@ -65,31 +64,37 @@ void editWeaponToCharacter(Player &player)
           if (input < 'a' || input > 'd')
                cout << "Invalid input";
      } while (input < 'a' || input > 'd');
-     character = player.getDataCharacter(input - 'a');
+     character = player.getDataCharacter((unsigned)(input - 'a'));
      character->EditWeapon(character->getName());
 }
 
 bool editActiveTeam(Player &player)
 {
-     char *input;
-     int characterNumber;
+     char *input = nullptr;
+     int characterNumber = 0;
      unsigned numOfCharachters = player.getNumberOfCharacters();
      cout << "Which character to add to the active team?";
-     for (unsigned i = 0; i < numOfCharachters; i++)
+     do
      {
-          cout << i + 1 << " " << player.getActiveCharacter(i) << endl;
-     }
-     cin >> input;
-     cin.clear();
-     characterNumber = stoi(input);
-     cout << "Which character?\n"
+          for (unsigned i = 0; i < numOfCharachters; i++)
+          {
+               cout << i + 1 << " " << player.getActiveCharacter(i) << endl;
+          }
+          cin >> input;
+          cin.clear();
+          characterNumber = stoi(input);
+          if (characterNumber < 0 || characterNumber >= (int)numOfCharachters)
+               cout << "Invalid number" << endl;
+     } while (characterNumber < 0 || characterNumber >= (int)numOfCharachters);
+     cout << "Replace with which character?\n"
           << "a. " << player.getActiveCharacter(0) << "\n"
           << "b. " << player.getActiveCharacter(1) << "\n"
           << "c. " << player.getActiveCharacter(2) << "\n"
           << "d. " << player.getActiveCharacter(3) << endl;
      cin >> input;
      cin.clear();
-     player.setActiveCharacter(input[0] - 'a', player.getDataCharacter(characterNumber));
+     player.setActiveCharacter((unsigned)(input[0] - 'a'), player.getDataCharacter((unsigned)characterNumber));
+     return true;
 }
 
 int main()
@@ -109,7 +114,7 @@ int main()
      do
      {
           cin >> input;
-          // cin.clear(); need to check ***
+          cin.clear(); //need to check ***
           switch (input)
           {
           case '0':
@@ -125,7 +130,7 @@ int main()
                editActiveTeam(player);
                break;
           case '4':
-               player.evaluateTeam();
+               player.evaluateTeam(cout);
                break;
           default:
                cout << "invalid key" << endl;

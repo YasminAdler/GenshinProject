@@ -5,6 +5,7 @@
 
 enum Element
 {
+    nullElement = -1,
     Anemo,
     Pyro,
     Cryo,

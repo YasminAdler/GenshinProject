@@ -7,11 +7,13 @@
 
 enum Weapon
 {
+    nullWeapon = -1,
     Sword,
     Polearm,
     Catalyst,
     Claymore,
-    Bow
+    Bow,
+    lastWeapon
 };
 
 char *WeaponName[]{

@@ -6,10 +6,10 @@
 
 using namespace std;
 
-/*Constructor*/
-//***Not sure about this
+/* Constructor */
 LegendaryCharacter::LegendaryCharacter()
-:Character(), signitureWeapon(nullptr){}
+    : Character(),
+      signitureWeapon(nullptr) {}
 
 LegendaryCharacter::LegendaryCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *SignitureWeapon)
     : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars),
@@ -95,9 +95,9 @@ void LegendaryCharacter::EditLegendaryWeapon(char *charName)
     }
 }
 
-/*Destructor*/
+/* Destructor */
 LegendaryCharacter::~LegendaryCharacter()
 {
-    if(signitureWeapon!= nullptr)
+    if (signitureWeapon != nullptr)
         delete[] signitureWeapon;
 }
