@@ -15,11 +15,9 @@ void EditLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
 bool addNewCharacterToPlayer(Player &player)
 {
      char name[CHAR_MAX];
-     Character *character = new Character{};
      char input = '0';
      cout << "Character name:\t";
      cin >> name;
-     character->setName(name);
      cout << "Character type(E-Epic, L-legend):" << endl;
      do
      {
@@ -30,15 +28,17 @@ bool addNewCharacterToPlayer(Player &player)
           case 'E':
           {
                // *** May not work needs to be checked
-               EpicCharacter *characterE = dynamic_cast<EpicCharacter *>(character);
-               player.addCharacterToData(characterE);
+               EpicCharacter *character = new EpicCharacter();
+               character->setName(name);
+               player.addCharacterToData(character);
                break;
           }
           case 'L':
           {
-               LegendaryCharacter *characterL = dynamic_cast<LegendaryCharacter *>(character); // *** why is the character still epic and not legendary
+               LegendaryCharacter *character = new LegendaryCharacter(); // *** why is the character still epic and not legendary
                // EditLegendaryWeaponToLegendaryCharacter(character);
-               player.addCharacterToData(characterL);
+               character->setName(name);
+               player.addCharacterToData(character);
                break;
           }
           default:
