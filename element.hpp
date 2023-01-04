@@ -14,7 +14,7 @@ enum Element
     Dendro
 };
 
-const char *ElementName[]{
+const char* ElementName[]{
     {"Anemo (Wind)"},
     {"Pyro (Fire)"},
     {"Cryo (Frost)"},

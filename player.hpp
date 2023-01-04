@@ -21,15 +21,14 @@ public:
     int getNumberOfCharacters(); 
 
     /* Setters */
-    void setName(string);
+    void setName(char *Name);
     int setNumberOfCharacters();
-    void addCharacter(Character *);
+    void addCharacterToData(Character *);
     void setActiveCharacter(int, Character *);
 
     /* Getters */
     Character *getDataCharacter(int characterNumber); // use this to get the data characters array
     Character *getActiveCharacter(int characterNumber); // use this to get the active characters array
-    Character *getCharacters();
 
     /*Mathods*/
     void evaluateTeam(); // use this in option 4 in main

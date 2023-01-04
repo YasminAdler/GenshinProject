@@ -11,7 +11,7 @@ void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
 {
 }
 
-bool addNewCharacterToData(Player &player)
+bool addNewCharacterToPlayer(Player &player)
 {
      char name[CHAR_MAX];
      Character *character = new Character{};
@@ -38,7 +38,7 @@ bool addNewCharacterToData(Player &player)
                break;
           }
      } while (input != 'E' || input != 'L');
-     player.addCharacter(character);
+     player.addCharacterToData(character);
 }
 
 void editWeaponToCharacter(Player &player)
@@ -109,7 +109,7 @@ int main()
                cout << "See Ya!" << endl;
                break;
           case '1':
-               addNewCharacterToData(player);
+               addNewCharacterToPlayer(player);
                break;
           case '2':
                editWeaponToCharacter(player);

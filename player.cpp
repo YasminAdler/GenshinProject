@@ -22,10 +22,6 @@ Character *Player::getActiveCharacter(int characterNumber)
     return activeCharacters[characterNumber];
 }
 
-Character *Player::getCharacters()
-{
-    return dataCharacters;
-}
 
 /*Setters*/
 int Player::setNumberOfCharacters()
@@ -33,11 +29,13 @@ int Player::setNumberOfCharacters()
     numberOfCharacters = numberOfCharacters + 1;
     return numberOfCharacters;
 }
+static ostream osOut;
+static istream osIn;
 
 /*Mathods*/
 void Player::evaluateTeam()
 {
-    cout << "Passable Elements Reactions:\n";
+    osOut << "Passable Elements Reactions:\n";
 
     for (int i = 0; i < 4; i++)
     {
@@ -47,24 +45,24 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)2)
                 {
-                    cout << "Blizzard\n", "Swirl\n";
+                    osOut << "Blizzard\n", "Swirl\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Dust\n";
+                    osOut << "Dust\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)4 ||
                     activeCharacters[j]->getElement() == (Element)3 ||
                     activeCharacters[j]->getElement() == (Element)1)
                 {
-                    cout << "Swirl\n";
+                    osOut << "Swirl\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Dust\n";
+                    osOut << "Dust\n";
                 }
             }
         }
@@ -75,26 +73,26 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)6)
                 {
-                    cout << "Burn\n";
+                    osOut << "Burn\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Magma\n";
+                    osOut << "Magma\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)2)
                 {
-                    cout << "Melt\n";
+                    osOut << "Melt\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)3)
                 {
-                    cout << "Vaporize\n";
+                    osOut << "Vaporize\n";
                 }
                 if (activeCharacters[j]->getElement() == (Element)4)
                 {
-                    cout << "Overloaded\n";
+                    osOut << "Overloaded\n";
                 }
             }
         }
@@ -105,7 +103,7 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Shatter\n";
+                    osOut << "Shatter\n";
                 }
             }
         }
@@ -116,22 +114,22 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)4)
                 {
-                    cout << "Electro-Charged\n";
+                    osOut << "Electro-Charged\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)2)
                 {
-                    cout << "Frozen\n";
+                    osOut << "Frozen\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Mud\n";
+                    osOut << "Mud\n";
                 }
 
                 if (activeCharacters[j]->getElement() == (Element)6)
                 {
-                    cout << "Poison\n";
+                    osOut << "Poison\n";
                 }
             }
         }
@@ -142,7 +140,7 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)2)
                 {
-                    cout << "Superconductor\n";
+                    osOut << "Superconductor\n";
                 }
             }
         }
@@ -156,7 +154,7 @@ void Player::evaluateTeam()
                     activeCharacters[j]->getElement() == (Element)3 ||
                     activeCharacters[j]->getElement() == (Element)1)
                 {
-                    cout << "Crystalize\n";
+                    osOut << "Crystalize\n";
                 }
             }
         }
@@ -166,7 +164,7 @@ void Player::evaluateTeam()
             {
                 if (activeCharacters[j]->getElement() == (Element)5)
                 {
-                    cout << "Thorn\n";
+                    osOut << "Thorn\n";
                 }
             }
         }
@@ -185,7 +183,7 @@ void Player::evaluateTeam()
                 flagLocation++;
             }
         }
-        cout << flagLocation << " Characters are from the same location:\n"
+        osOut << flagLocation << " Characters are from the same location:\n"
              << "Adding " << flagLocation << "0%"
              << " coordination\n";
     }
@@ -203,7 +201,7 @@ void Player::evaluateTeam()
                 flagElement++;
             }
         }
-        cout << flagElement << " Characters have the same Element:\n"
+        osOut << flagElement << " Characters have the same Element:\n"
              << "Adding " << flagElement << "0%"
              << " coordination\n";
     }
