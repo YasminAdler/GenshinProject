@@ -24,22 +24,28 @@ bool addNewCharacterToPlayer(Player &player)
      do
      {
           cin >> input;
+          cin.clear();
           switch (input)
           {
           case 'E':
+          {
                // *** May not work needs to be checked
-               EpicCharacter *character = dynamic_cast<EpicCharacter *>(character);
+               EpicCharacter *characterE = dynamic_cast<EpicCharacter *>(character);
+               player.addCharacterToData(characterE);
                break;
+          }
           case 'L':
-               LegendaryCharacter *character = dynamic_cast<LegendaryCharacter *>(character); // *** why is the character still epic and not legendary 
-               EditLegendaryWeaponToLegendaryCharacter(character);
+          {
+               LegendaryCharacter *characterL = dynamic_cast<LegendaryCharacter *>(character); // *** why is the character still epic and not legendary
+               // EditLegendaryWeaponToLegendaryCharacter(character);
+               player.addCharacterToData(characterL);
                break;
+          }
           default:
                cout << "invald key" << endl;
                break;
           }
      } while (input != 'E' || input != 'L');
-     player.addCharacterToData(character);
 }
 
 void editWeaponToCharacter(Player &player)
