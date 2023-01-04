@@ -7,8 +7,9 @@
 
 using namespace std;
 
-void addLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
+void EditLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
 {
+     character->EditLegendaryWeapon(character->getName());
 }
 
 bool addNewCharacterToPlayer(Player &player)
@@ -30,8 +31,8 @@ bool addNewCharacterToPlayer(Player &player)
                EpicCharacter *character = dynamic_cast<EpicCharacter *>(character);
                break;
           case 'L':
-               LegendaryCharacter *character = dynamic_cast<LegendaryCharacter *>(character);
-               addLegendaryWeaponToLegendaryCharacter(character);
+               LegendaryCharacter *character = dynamic_cast<LegendaryCharacter *>(character); // *** why is the character still epic and not legendary 
+               EditLegendaryWeaponToLegendaryCharacter(character);
                break;
           default:
                cout << "invald key" << endl;

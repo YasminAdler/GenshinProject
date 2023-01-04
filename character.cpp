@@ -48,6 +48,12 @@ char *Character::getEquippedWeapon()
     return equippedWeapon;
 }
 
+void Character::SetEquippedWeapon(char * newWeapon)
+{
+    delete equippedWeapon;
+    equippedWeapon = strdup(newWeapon);
+}
+
 char *Character::getLocation()
 {
     return location;

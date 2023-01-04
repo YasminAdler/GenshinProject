@@ -10,10 +10,6 @@ private:
 public:
     /*Constructor*/
     LegendaryCharacter(char *Name, char *Location,
-                       Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
-        : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
-
-    LegendaryCharacter(char *Name, char *Location,
                        Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *signitureWeapon)
         : Character(Name, Location, Type, WeaponType, EquippedWeapon, Stars){};
 

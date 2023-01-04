@@ -28,6 +28,7 @@ public:
     Weapon getIntWeapon();
     char* getName(){return name;};
     char* getEquippedWeapon();
+    void SetEquippedWeapon(char*);
     char* getLocation();
     Element getElement();
 

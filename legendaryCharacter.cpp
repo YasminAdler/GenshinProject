@@ -7,9 +7,6 @@
 using namespace std;
 
 /*Constructor*/
-LegendaryCharacter::LegendaryCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars)
-{
-}
 LegendaryCharacter::LegendaryCharacter(char *Name, char *Location, Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars, char *SignitureWeapon)
 {
     signitureWeapon = strdup(SignitureWeapon);
@@ -79,7 +76,24 @@ void LegendaryCharacter::Attack()
 
 void LegendaryCharacter::EditLegendaryWeapon(char *charName)
 {
-    return EditWeapon(charName);
+    {
+        int newWeapon = -1;
+        while (newWeapon < 0 || newWeapon > 4)
+        {
+            cout << "Choose your new weapon:\n";
+
+            printWeaponName();
+
+            cin >> newWeapon;
+            if (newWeapon < 0 || newWeapon > 4)
+            {
+                cout << "Invalid number\n";
+            }
+        }
+        this->SetEquippedWeapon(WeaponName[newWeapon]);
+    }
+    
+
 }
 
 /*Destructor*/
