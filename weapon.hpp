@@ -4,6 +4,7 @@
 #define WEAPON_HPP
 #include <iostream>
 
+
 enum Weapon
 {
     Sword,
@@ -24,12 +25,12 @@ void printWeaponName()
 {
     for(int i = 0; i<5; i++)
     {
-        cout << i+1 << "."; 
+        std::cout << i+1 << "."; 
         for(int j = 0; j<strlen(WeaponName[i]); j++)
         {
-            cout << WeaponName[i][j];
+            std::cout << WeaponName[i][j];
         }
-        cout <<"\n";
+        std::cout <<"\n";
     }
 }
 
