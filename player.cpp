@@ -19,6 +19,11 @@ Character *Player::getActiveCharacter(unsigned characterNumber)
     return activeCharacters[characterNumber];
 }
 
+void Player::setPlayerName(char *Name)
+{
+    userName = strdup(Name);
+}
+
 /* Setters */
 unsigned Player::setNumberOfCharacters()
 {
