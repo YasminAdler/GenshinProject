@@ -38,7 +38,6 @@ void Player::setPlayerName(char *Name)
 }
 
 /* Setters */
-
 void Player::addCharacterToData(Character *newCharacter)
 {
     Character **newDataCharacter = new Character*[numberOfCharacters + 1];
@@ -48,6 +47,12 @@ void Player::addCharacterToData(Character *newCharacter)
     if(dataCharacters!= nullptr)
         delete[] dataCharacters;
     dataCharacters = newDataCharacter;
+}
+void Player::setActiveCharacter(unsigned position, Character *dataCharacter)
+{
+    if(position>=4)
+        return;
+    activeCharacters[position] = dataCharacter;
 }
 // static ostream osOut;
 // static istream osIn;

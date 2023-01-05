@@ -26,7 +26,7 @@ public:
     /* Setters */
     void setPlayerName(char *Name);
     void addCharacterToData(Character *);
-    void setActiveCharacter(unsigned, Character *);
+    void setActiveCharacter(unsigned position, Character *dataCharacter);
 
     /* Getters */
     Character *getDataCharacter(unsigned characterNumber); // use this to get the data characters array
