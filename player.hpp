@@ -19,16 +19,14 @@ private:
 public:
     /* Constructors */
     Player();
-    
-    /* Getters */
-    unsigned getNumberOfCharacters(); 
 
     /* Setters */
     void setPlayerName(char *Name);
     void addCharacterToData(Character *);
     void setActiveCharacter(unsigned position, Character *dataCharacter);
 
-    /* Getters */
+    /* Getters */  
+    unsigned getNumberOfCharacters(); 
     Character *getDataCharacter(unsigned characterNumber); // use this to get the data characters array
     Character *getActiveCharacter(unsigned characterNumber); // use this to get the active characters array
 

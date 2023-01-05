@@ -19,10 +19,36 @@ unsigned Player::raiseNumberOfCharacters()
     return numberOfCharacters;
 }
 
+/* Setters */
+void Player::addCharacterToData(Character *newCharacter)
+{
+    Character **newDataCharacter = new Character *[numberOfCharacters + 1];
+    for (size_t i = 0; i < numberOfCharacters; ++i)
+        newDataCharacter[i] = dataCharacters[i];
+    newDataCharacter[raiseNumberOfCharacters()] = newCharacter;
+    if (dataCharacters != nullptr)
+        delete[] dataCharacters;
+    dataCharacters = newDataCharacter;
+}
+void Player::setActiveCharacter(unsigned position, Character *dataCharacter)
+{
+    if (position >= 4)
+        return;
+    activeCharacters[position] = dataCharacter;
+}
+
 /* Getters */
+
 unsigned Player::getNumberOfCharacters()
 {
     return numberOfCharacters;
+}
+
+Character *Player::getDataCharacter(unsigned characterNumber)
+{
+    if (characterNumber >= numberOfCharacters)
+        return nullptr;
+    return dataCharacters[characterNumber];
 }
 
 Character *Player::getActiveCharacter(unsigned characterNumber)
@@ -37,23 +63,6 @@ void Player::setPlayerName(char *Name)
     userName = strdup(Name);
 }
 
-/* Setters */
-void Player::addCharacterToData(Character *newCharacter)
-{
-    Character **newDataCharacter = new Character*[numberOfCharacters + 1];
-    for (size_t i = 0; i < numberOfCharacters;++i)
-        newDataCharacter[i] = dataCharacters[i];
-    newDataCharacter[raiseNumberOfCharacters()] = newCharacter;
-    if(dataCharacters!= nullptr)
-        delete[] dataCharacters;
-    dataCharacters = newDataCharacter;
-}
-void Player::setActiveCharacter(unsigned position, Character *dataCharacter)
-{
-    if(position>=4)
-        return;
-    activeCharacters[position] = dataCharacter;
-}
 // static ostream osOut;
 // static istream osIn;
 
