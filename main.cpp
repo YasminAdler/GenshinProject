@@ -1,24 +1,21 @@
 // Alon A. Rabinowitz 208142323
 // Yasmin Adler 208462184
 #include <iostream>
-#include "player.hpp"
+#include "character.hpp"
 #include "epicCharacter.hpp"
 #include "legendaryCharacter.hpp"
+#include "player.hpp"
 
 using namespace std;
 
-void EditLegendaryWeaponToLegendaryCharacter(LegendaryCharacter *character)
-{
-     character->EditLegendaryWeapon(character->getName());
-}
-
+//addNewCharacterToPlayer
 bool addNewCharacterToPlayer(Player &player)
 {
      char name[CHAR_MAX];
      char input = '0';
      cout << "Character name:\t";
      cin >> name;
-     cout << "Character type(E-Epic, L-legend):" << endl;
+     cout << "Character type(E - Epic or L - legend):" << endl;
      do
      {
           cin >> input;
@@ -35,7 +32,6 @@ bool addNewCharacterToPlayer(Player &player)
           case 'L':
           {
                LegendaryCharacter *character = new LegendaryCharacter(); 
-               // EditLegendaryWeaponToLegendaryCharacter(character);
                character->setName(name);
                player.addCharacterToData(character);
                break;

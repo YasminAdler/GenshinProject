@@ -49,10 +49,10 @@ char *Character::getWeapon()
     case 4:
         return WeaponName[4];
         break;
-
     default:
         break;
     }
+    return nullptr;
 }
 Weapon Character::getIntWeapon()
 {
