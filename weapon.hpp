@@ -4,6 +4,7 @@
 #define WEAPON_HPP
 #include <iostream>
 #include <cstring>
+using namespace std;
 
 
 enum Weapon
@@ -17,7 +18,8 @@ enum Weapon
     lastWeapon
 };
 
-char *WeaponName[]{
+
+char *WeaponName[] = {
     {(char *)"Sword"},
     {(char *)"Polearm"},
     {(char *)"Catalyst"},

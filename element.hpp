@@ -2,6 +2,7 @@
 // Yasmin Adler 208462184
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
+using namespace std;
 
 enum Element
 {
@@ -15,7 +16,7 @@ enum Element
     Dendro
 };
 
-const char* ElementName[]{
+const char* ElementName[] = {
     {"Anemo (Wind)"},
     {"Pyro (Fire)"},
     {"Cryo (Frost)"},
