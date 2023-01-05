@@ -2,10 +2,6 @@
 // Yasmin Adler 208462184
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
-// #include <string.h>
-// #include <string>
-// #include <iostream>
-using namespace std;
 
 enum Element
 {
@@ -19,13 +15,14 @@ enum Element
     Dendro
 };
 
-const char* ElementName[] = {
-    {"Anemo (Wind)"},
-    {"Pyro (Fire)"},
-    {"Cryo (Frost)"},
-    {"Hydro (Water)"},
-    {"Electro (l mean-... common)"},
-    {"Geo (Earth)"},
-    {"Dendro (Nature)"}};
-    
+// namespace element{
+// const char* ElementName[] = {
+//     {"Anemo (Wind)"},
+//     {"Pyro (Fire)"},
+//     {"Cryo (Frost)"},
+//     {"Hydro (Water)"},
+//     {"Electro (l mean-... common)"},
+//     {"Geo (Earth)"},
+//     {"Dendro (Nature)"}};
+// };
 #endif // ELEMENT_HPP

@@ -15,7 +15,7 @@ private:
     Weapon weaponType;
     char *equippedWeapon;
     int stars;
-
+    
 public:
     /* Constructors */
     Character();
@@ -23,7 +23,7 @@ public:
               Element Type, Weapon WeaponType, char *EquippedWeapon, int Stars);
 
     /* Getters */
-    char *getWeapon();
+    char *getWeapon(int = -1);
     Weapon getIntWeapon();
     char *getName() { return name; };
     char *getEquippedWeapon();
@@ -39,11 +39,12 @@ public:
     virtual void Attack(){};
     // int EditWeapon(char *charName);
     void printName();
+    void printWeaponName();
 
     /* Destructor */
     ~Character();
 };
 /* Stream operators */
-std::ostream &operator<<(std::ostream &os, Character &character);
+// std::ostream &operator<<(std::ostream &os, Character &character);
 
 #endif // CHARACTER_HPP

@@ -4,8 +4,7 @@
 #define WEAPON_HPP
 #include <iostream>
 #include <cstring>
-using namespace std;
-
+// using namespace std;
 
 enum Weapon
 {
@@ -17,26 +16,5 @@ enum Weapon
     Bow,
     lastWeapon
 };
-
-
-char *WeaponName[] = {
-    {(char *)"Sword"},
-    {(char *)"Polearm"},
-    {(char *)"Catalyst"},
-    {(char *)"Claymore"},
-    {(char *)"Bow"}};
-
-void printWeaponName()
-{
-    for (size_t i = 0; i < 5; i++)
-    {
-        std::cout << i + 1 << ".";
-        for (size_t j = 0; j < strlen(WeaponName[i]); j++)
-        {
-            std::cout << WeaponName[i][j];
-        }
-        std::cout << "\n";
-    }
-}
 
 #endif // WEAPON_HPP

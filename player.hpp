@@ -33,8 +33,6 @@ public:
     /* Methods */
     void evaluateTeam(std::ostream& osOut); // use this in option 4 in main
     void editWeaponToCharacter();
-
-
     
     /* Destructor */
     ~Player();

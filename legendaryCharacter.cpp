@@ -91,7 +91,7 @@ void LegendaryCharacter::EditLegendaryWeapon(char *charName)
                 cout << "Invalid number\n";
             }
         }
-        this->SetEquippedWeapon(WeaponName[newWeapon]);
+        this->SetEquippedWeapon(Character::getWeapon(newWeapon));
     }
 }
 

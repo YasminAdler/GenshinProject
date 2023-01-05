@@ -1,3 +1,5 @@
+// Alon A. Rabinowitz 208142323
+// Yasmin Adler 208462184
 #ifndef LEGENDARYCHARACTER_HPP
 #define LEGENDARYCHARACTER_HPP
 #include "character.hpp"

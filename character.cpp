@@ -6,6 +6,13 @@
 
 using namespace std;
 
+static char *WeaponName[]{
+    {(char *)"Sword"},
+    {(char *)"Polearm"},
+    {(char *)"Catalyst"},
+    {(char *)"Claymore"},
+    {(char *)"Bow"}};
+
 /* Constructors */
 Character::Character()
     : name(nullptr),
@@ -30,9 +37,11 @@ Character::Character(char *Name,
 /* Getters */
 // What does this do? ***
 // or supposed to do.
-char *Character::getWeapon()
+char *Character::getWeapon(int weapon)
 {
-    switch (weaponType)
+    if (weapon == -1)
+        weapon = (int)weaponType;
+    switch (weapon)
     {
     case 0:
         return WeaponName[0];
@@ -77,7 +86,8 @@ Element Character::getElement()
 /* Setters */
 void Character::SetEquippedWeapon(char *newWeapon)
 {
-    delete equippedWeapon;
+    if (equippedWeapon != nullptr)
+        delete[] equippedWeapon;
     equippedWeapon = strdup(newWeapon);
 }
 
@@ -111,6 +121,19 @@ void Character::printName()
         cout << name[i];
     }
 }
+
+void Character::printWeaponName()
+{
+    for (size_t i = 0; i < 5; i++)
+    {
+        std::cout << i + 1 << ".";
+        for (size_t j = 0; j < strlen(WeaponName[i]); j++)
+        {
+            std::cout << WeaponName[i][j];
+        }
+        std::cout << "\n";
+    }
+};
 
 /* Destructor */
 Character::~Character()
