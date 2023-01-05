@@ -2,6 +2,9 @@
 // Yasmin Adler 208462184
 #ifndef ELEMENT_HPP
 #define ELEMENT_HPP
+// #include <string.h>
+// #include <string>
+// #include <iostream>
 using namespace std;
 
 enum Element
