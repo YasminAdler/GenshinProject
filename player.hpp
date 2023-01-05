@@ -12,17 +12,19 @@ private:
     Character *activeCharacters[4];
     Character **dataCharacters;
     unsigned numberOfCharacters;
+    
+    /* Private methods */
+    unsigned raiseNumberOfCharacters();
 
 public:
     /* Constructors */
     Player();
     
-    /*Getters*/
+    /* Getters */
     unsigned getNumberOfCharacters(); 
 
     /* Setters */
     void setPlayerName(char *Name);
-    unsigned setNumberOfCharacters();
     void addCharacterToData(Character *);
     void setActiveCharacter(unsigned, Character *);
 
@@ -30,7 +32,7 @@ public:
     Character *getDataCharacter(unsigned characterNumber); // use this to get the data characters array
     Character *getActiveCharacter(unsigned characterNumber); // use this to get the active characters array
 
-    /*Mathods*/
+    /* Methods */
     void evaluateTeam(std::ostream& osOut); // use this in option 4 in main
     void editWeaponToCharacter();
 

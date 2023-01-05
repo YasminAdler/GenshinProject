@@ -6,7 +6,18 @@
 using namespace std;
 
 /* Constructors */
-Player::Player() : numberOfCharacters(0) {}
+Player::Player()
+    : userName(nullptr),
+      activeCharacters(),
+      dataCharacters(nullptr),
+      numberOfCharacters(0) {}
+
+/* Private methods */
+unsigned Player::raiseNumberOfCharacters()
+{
+    numberOfCharacters = numberOfCharacters + 1;
+    return numberOfCharacters;
+}
 
 /* Getters */
 unsigned Player::getNumberOfCharacters()
@@ -21,14 +32,22 @@ Character *Player::getActiveCharacter(unsigned characterNumber)
 
 void Player::setPlayerName(char *Name)
 {
+    if (userName != nullptr)
+        delete[] userName;
     userName = strdup(Name);
 }
 
 /* Setters */
-unsigned Player::setNumberOfCharacters()
+
+void Player::addCharacterToData(Character *newCharacter)
 {
-    numberOfCharacters = numberOfCharacters + 1;
-    return numberOfCharacters;
+    Character **newDataCharacter = new Character*[numberOfCharacters + 1];
+    for (size_t i = 0; i < numberOfCharacters;++i)
+        newDataCharacter[i] = dataCharacters[i];
+    newDataCharacter[raiseNumberOfCharacters()] = newCharacter;
+    if(dataCharacters!= nullptr)
+        delete[] dataCharacters;
+    dataCharacters = newDataCharacter;
 }
 // static ostream osOut;
 // static istream osIn;
@@ -36,8 +55,7 @@ unsigned Player::setNumberOfCharacters()
 /* Methods */
 void Player::evaluateTeam(ostream &osOut)
 {
-    osOut << "Passable Elements Reactions:\n";
-
+    osOut << "Possible Element Reactions:\n";
     for (int i = 0; i < 4; i++)
     {
         if (activeCharacters[i]->getElement() == (Element)0) // if element == Anemo
