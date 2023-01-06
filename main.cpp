@@ -7,9 +7,8 @@
 
 using namespace std;
 
-// addNewCharacterToPlayer
-
-void addNewCharacterToPlayer(Player &player) // crushing
+//  addNewCharacterToPlayer
+void addNewCharacterToPlayer(Player &player) // crashing
 {
      char name[CHAR_MAX];
      char input = '0';
@@ -55,10 +54,21 @@ void editWeaponToCharacter(Player &player)
      {
           std::cin >> input;
           std::cin.clear();
+          if (input == 0)
+               return;
           if (input < 'a' || input > 'd')
-               cout << "Invalid input";
-     } while (input < 'a' || input > 'd');
+          {
+               cout << "Invalid input" << endl;
+               continue;
+          }
+          if ((character = player.getDataCharacter((unsigned)(input - 'a'))) == nullptr)
+               cout << "No character" << endl;
+     } while (input < 'a' || input > 'd' || character == nullptr);
      character = player.getDataCharacter((unsigned)(input - 'a'));
+     if (character == nullptr)
+     {
+          return;
+     }
      character->EditWeapon(character->getName());
 }
 

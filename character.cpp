@@ -145,3 +145,9 @@ Character::~Character()
     if (equippedWeapon != nullptr)
         delete[] equippedWeapon;
 }
+
+/* Stream operators */
+std::ostream &operator<<(std::ostream &os, Character &character)
+{
+    os << character.getName();
+}

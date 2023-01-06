@@ -44,7 +44,8 @@ public:
     /* Destructor */
     ~Character();
 };
+
 /* Stream operators */
-// std::ostream &operator<<(std::ostream &os, Character &character);
+std::ostream &operator<<(std::ostream &os, Character &character);
 
 #endif // CHARACTER_HPP

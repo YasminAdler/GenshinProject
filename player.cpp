@@ -28,7 +28,7 @@ void Player::addCharacterToData(Character *newCharacter)
     newDataCharacter[raiseNumberOfCharacters()] = newCharacter;
     if (dataCharacters != nullptr)
         delete[] dataCharacters;
-    dataCharacters = newDataCharacter;
+    dataCharacters = newDataCharacter;//needs to be a copy operator deep copy***
 }
 void Player::setActiveCharacter(unsigned position, Character *dataCharacter)
 {
