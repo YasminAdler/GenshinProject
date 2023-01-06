@@ -17,7 +17,6 @@ void addNewCharacterToPlayer(Player &player) // crashing
      cout << "Character type(E - Epic or L - legend):" << endl;
      do
      {
-          // cout << "ITeration\n";
           cin >> input;
           switch (input)
           {
@@ -38,18 +37,26 @@ void addNewCharacterToPlayer(Player &player) // crashing
           default:
                cout << "invald key" << endl;
           }
-     }while ((input != 'E') && (input != 'L'));
+     } while ((input != 'E') && (input != 'L'));
 }
 
 void editWeaponToCharacter(Player &player)
 {
      Character *character;
      char input;
-     cout << "Which character?\n"
-          << "a. " << player.getActiveCharacter(0) << "\n"
-          << "b. " << player.getActiveCharacter(1) << "\n"
-          << "c. " << player.getActiveCharacter(2) << "\n"
-          << "d. " << player.getActiveCharacter(3) << endl;
+     cout << "Which character?\n";
+     cout << "a. ";
+     player.getActiveCharacter(0)->printName();
+     cout << "\n";
+     cout << "b. ";
+     player.getActiveCharacter(1)->printName();
+     cout << "\n";
+     cout << "c. ";
+     player.getActiveCharacter(2)->printName();
+     cout << "\n";
+     cout << "d. ";
+     player.getActiveCharacter(3)->printName();
+     cout << endl;
      do
      {
           std::cin >> input;
@@ -86,7 +93,7 @@ bool editActiveTeam(Player &player)
           }
           std::cin >> input;
           std::cin.clear();
-          characterNumber = stoi(input)-1;
+          characterNumber = stoi(input) - 1;
           if (characterNumber < 0 || characterNumber >= (int)numOfCharachters)
                cout << "Invalid number" << endl;
      } while (characterNumber < 0 || characterNumber >= (int)numOfCharachters);
@@ -112,11 +119,11 @@ int main()
      // cin.clear();
      do
      {
-     cout << "1 Add New Character to data \n"
-          << "2 Edit Weapon to character (by name)\n"
-          << "3 Edit active team (you choose who you want to swap - can be empty)\n"
-          << "4 Evaluate Team\n"
-          << "0 Exit" << endl;
+          cout << "1 Add New Character to data \n"
+               << "2 Edit Weapon to character (by name)\n"
+               << "3 Edit active team (you choose who you want to swap - can be empty)\n"
+               << "4 Evaluate Team\n"
+               << "0 Exit" << endl;
           std::cin >> mainInput;
           std::cin.clear(); // need to check ***
           switch (mainInput)
