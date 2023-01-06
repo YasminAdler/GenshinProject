@@ -150,4 +150,5 @@ Character::~Character()
 std::ostream &operator<<(std::ostream &os, Character &character)
 {
     os << character.getName();
+    return os;
 }

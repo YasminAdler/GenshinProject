@@ -86,7 +86,7 @@ bool editActiveTeam(Player &player)
           }
           std::cin >> input;
           std::cin.clear();
-          characterNumber = stoi(input);
+          characterNumber = stoi(input)-1;
           if (characterNumber < 0 || characterNumber >= (int)numOfCharachters)
                cout << "Invalid number" << endl;
      } while (characterNumber < 0 || characterNumber >= (int)numOfCharachters);
