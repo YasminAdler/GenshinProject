@@ -7,18 +7,20 @@
 
 using namespace std;
 
-//addNewCharacterToPlayer
-bool addNewCharacterToPlayer(Player &player)
+// addNewCharacterToPlayer
+
+bool addNewCharacterToPlayer(Player &player) // crushing
 {
      char name[CHAR_MAX];
      char input = '0';
      cout << "Character name:\t";
-     cin >> name;
+     std::cin >> name;
      cout << "Character type(E - Epic or L - legend):" << endl;
-     do
+
+     while (input != 'E' || input != 'L')
      {
-          cin >> input;
-          cin.clear();
+          std::cin >> input;
+          std::cin.clear();
           switch (input)
           {
           case 'E':
@@ -30,7 +32,7 @@ bool addNewCharacterToPlayer(Player &player)
           }
           case 'L':
           {
-               LegendaryCharacter *character = new LegendaryCharacter(); 
+               LegendaryCharacter *character = new LegendaryCharacter();
                character->setName(name);
                player.addCharacterToData(character);
                break;
@@ -39,9 +41,44 @@ bool addNewCharacterToPlayer(Player &player)
                cout << "invald key" << endl;
                break;
           }
-     } while (input != 'E' || input != 'L');
+     }
      return true;
 }
+
+// bool addNewCharacterToPlayer(Player &player) // crushing
+// {
+//      char name[CHAR_MAX];
+//      char input = '0';
+//      cout << "Character name:\t";
+//      cin >> name;
+//      cout << "Character type(E - Epic or L - legend):" << endl;
+//      do
+//      {
+//           cin >> input;
+//           cin.clear();
+//           switch (input)
+//           {
+//           case 'E':
+//           {
+//                EpicCharacter *character = new EpicCharacter();
+//                character->setName(name);
+//                player.addCharacterToData(character);
+//                break;
+//           }
+//           case 'L':
+//           {
+//                LegendaryCharacter *character = new LegendaryCharacter();
+//                character->setName(name);
+//                player.addCharacterToData(character);
+//                break;
+//           }
+//           default:
+//                cout << "invald key" << endl;
+//                break;
+//           }
+//      } while (input != 'E' || input != 'L');
+//      return true;
+// }
 
 void editWeaponToCharacter(Player &player)
 {
@@ -109,7 +146,7 @@ int main()
      do
      {
           cin >> input;
-          cin.clear(); //need to check ***
+          cin.clear(); // need to check ***
           switch (input)
           {
           case '0':
