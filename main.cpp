@@ -111,7 +111,7 @@ bool editActiveTeam(Player &player)
 int main()
 {
      Player player{};
-     char name[CHAR_MAX];
+     char name[100];
      char mainInput = '0';
      cout << "Player name:\t";
      std::cin >> name;
